@@ -39,30 +39,28 @@ user should drink based on their individual needs and habits.
 - Tensorflow /w Keras: for machine learning model, and high-level neural netowrks.
 
 ## Design Patterns:
-When designing a hydration tracker app, choosing the right design pattern can help you create a well-structured, maintainable, and scalable application. Here are a few design patterns that you may consider for your hydration tracker app:
+When designing a hydration tracker mobile app, you may want to consider design patterns that are well-suited for mobile development and user interaction. Here are some design patterns commonly used in mobile app development that you could consider for your hydration tracker app:
 
 1. **Model-View-Controller (MVC)**:
-   - **Model**: Represents the data and business logic of the application, such as hydration goals, water intake records, and user information.
+   - **Model**: Represents the data and business logic of the app, such as hydration goals, water intake records, and user information.
    - **View**: Represents the user interface components, such as the dashboard, input forms, and visualizations for hydration data.
    - **Controller**: Acts as an intermediary between the model and view, handling user input, updating the model, and updating the view accordingly.
 
-2. **Model-View-ViewModel (MVVM)**:
-   - **Model**: Represents the data and business logic, similar to MVC.
+2. **Model-View-Presenter (MVP)**:
+   - **Model**: Represents the data and business logic.
    - **View**: Represents the user interface components.
-   - **ViewModel**: Acts as an intermediary between the model and view, but also exposes data and actions to the view in a way that is easy to bind to the user interface.
+   - **Presenter**: Acts as an intermediary between the model and view, handling user input, updating the model, and updating the view. MVP is often used in Android development.
 
-3. **Observer Pattern**:
-   - Allows objects to subscribe and unsubscribe to events or changes in another object.
-   - This pattern can be useful for updating the UI in real-time based on changes in hydration data or user input.
+3. **Model-View-ViewModel (MVVM)**:
+   - **Model**: Represents the data and business logic.
+   - **View**: Represents the user interface components.
+   - **ViewModel**: Acts as an intermediary between the model and view, but also exposes data and actions to the view in a way that is easy to bind to the user interface. MVVM is commonly used in iOS development.
 
-4. **Singleton Pattern**:
-   - Ensures that a class has only one instance and provides a global point of access to it.
-   - This pattern can be useful for managing a single source of truth for hydration data throughout the app.
+4. **Single-Activity Architecture (Android)**:
+   - In Android development, you may consider using a single-activity architecture with multiple fragments to manage different screens and components within your app.
 
-5. **Decorator Pattern**:
-   - Allows you to add new functionalities to objects dynamically.
-   - This pattern can be useful for adding features like reminders, notifications, or gamification elements to encourage users to stay hydrated.
+5. **Coordinator Pattern**:
+   - Helps manage navigation flow and communication between different screens or components in the app. This can be useful for handling transitions between hydration tracking screens, settings, reminders, etc.
 
-6. **Strategy Pattern**:
-   - Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
-   - This pattern can be useful for implementing different strategies for calculating hydration goals based on user preferences or health factors.
+6. **Material Design Guidelines (Android)** or **Human Interface Guidelines (iOS)**:
+   - While not design patterns in the traditional sense, following platform-specific design guidelines can help ensure a consistent and intuitive user experience for your app users.
