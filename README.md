@@ -6,12 +6,12 @@ An app that helps users track their daily water intake and reminds them to stay 
 the day.
 
 Key requirements:
-[] The app should be able to allow users to set their daily water intake goals.
-[] The app should be able to track progress.
-[] The app should be able to send notifications to drink water regularly.
-[] The app should be able to provide insights into the benefits of staying hydrated.
-[] The app should be able to personalized recommendations based on th user's activity level.
-[] The app should be able to personalized recommendations based on th user's environment.
+[ ] The app should be able to allow users to set their daily water intake goals.
+[ ] The app should be able to track progress.
+[ ] The app should be able to send notifications to drink water regularly.
+[ ] The app should be able to provide insights into the benefits of staying hydrated.
+[ ] The app should be able to personalized recommendations based on th user's activity level.
+[ ] The app should be able to personalized recommendations based on th user's environment.
 
 Ideas to gather information:
 1. Data collection: Collect data from the user, suchh as their age, weight, height, activity level,
