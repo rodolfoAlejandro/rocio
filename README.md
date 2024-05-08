@@ -14,7 +14,7 @@ Key requirements:
 - [ ] The app should be able to personalized recommendations based on th user's environment.
 
 Ideas to gather information:
-1. **Data collection**: Collect data from the user, suchh as their age, weight, height, activity level,
+1. **Data collection**: Collect data from the user, such as their age, weight, height, activity level,
 and any specific health conditions that may affect their hydration needs.
 
 2. **Machine Learning Model**: Train a machine learning model using this data to predict the user's daily
