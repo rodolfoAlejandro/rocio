@@ -1,11 +1,11 @@
-# rocio
-This app will start as a web application to track the hydration of an individual.
+# Rocio
+This app will be a cross-platform (Android, iOS, Windows, MacOS, Linux)
 
-Purpose:
+## Purpose
 An app that helps users track their daily water intake and reminds them to stay hydrated thorughout
 the day.
 
-Key requirements:
+## Key requirements
 - [ ] The app should be able to allow users to set their daily water intake goals.
 - [ ] The app should be able to track progress.
 - [ ] The app should be able to send notifications to drink water regularly.
@@ -13,7 +13,7 @@ Key requirements:
 - [ ] The app should be able to personalized recommendations based on th user's activity level.
 - [ ] The app should be able to personalized recommendations based on th user's environment.
 
-Ideas to gather information:
+## Ideas to gather information
 1. **Data collection**: Collect data from the user, such as their age, weight, height, activity level,
 and any specific health conditions that may affect their hydration needs.
 
@@ -30,3 +30,10 @@ and make accurate predictions.
 
 5. **Personalized Recommendations**: Use the AI to provide persolaized recommendations on when and how much watyer the
 user should drink based on their individual needs and habits.
+
+## Programming language
+- Python
+
+## Frameworks
+- Beeware: for cross-platform compatibility
+- Tensorflow /w Keras: for machine learning model, and high-level neural netowrks.
