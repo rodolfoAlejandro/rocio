@@ -64,3 +64,59 @@ When designing a hydration tracker mobile app, you may want to consider design p
 
 6. **Material Design Guidelines (Android)** or **Human Interface Guidelines (iOS)**:
    - While not design patterns in the traditional sense, following platform-specific design guidelines can help ensure a consistent and intuitive user experience for your app users.
+
+## Code sample
+It seems like you are referring to the Beeware project, which is a collection of tools and libraries for building native user interfaces in Python. Here is an example of a simple "Beeware" script using the Model-View-Controller (MVC) design pattern with Toga, a part of the Beeware project:
+
+Model (model.py):
+```python
+class BeewareModel:
+    def __init__(self):
+        self.message = "Beeware: This is a Beeware message!"
+
+    def get_message(self):
+        return self.message
+```
+
+View (view.py):
+```python
+import toga
+
+class BeewareView(toga.App):
+    def startup(self):
+        self.main_window = toga.MainWindow(title="Beeware MVC Example")
+        self.label = toga.Label("")
+
+        self.main_window.content = self.label
+        self.main_window.show()
+
+    def show_message(self, message):
+        self.label.text = message
+```
+
+Controller (controller.py):
+```python
+from model import BeewareModel
+from view import BeewareView
+
+class BeewareController:
+    def __init__(self):
+        self.model = BeewareModel()
+        self.view = BeewareView()
+
+    def show_message(self):
+        message = self.model.get_message()
+        self.view.show_message(message)
+
+if __name__ == "__main__":
+    controller = BeewareController()
+    controller.view.app = controller
+    controller.view.main_loop()
+```
+
+In this script:
+- The Model (BeewareModel) contains the data and business logic.
+- The View (BeewareView) is a Toga app that displays the data to the user.
+- The Controller (BeewareController) acts as an intermediary between the Model and View, handling user input and updating the View based on changes in the Model.
+
+When you run the controller.py script, it will display the "Beeware: This is a Beeware message!" output in a Toga window. This is a simple example to demonstrate the MVC pattern with Beeware and Toga in action.
