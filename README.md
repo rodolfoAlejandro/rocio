@@ -120,3 +120,95 @@ In this script:
 - The Controller (BeewareController) acts as an intermediary between the Model and View, handling user input and updating the View based on changes in the Model.
 
 When you run the controller.py script, it will display the "Beeware: This is a Beeware message!" output in a Toga window. This is a simple example to demonstrate the MVC pattern with Beeware and Toga in action.
+
+## Views
+For a hydration tracker mobile app, you can create the following views to provide a user-friendly and intuitive experience:
+
+1. **Home Screen**:
+   - Display daily water intake progress.
+   - Show a summary of water consumed and remaining target.
+   - Include a quick add button to log water intake easily.
+
+2. **Log Water Intake Screen**:
+   - Allow users to manually log their water intake.
+   - Provide options to select the amount of water consumed (e.g., glass, bottle, custom amount).
+   - Include a timestamp for each entry.
+
+3. **Hydration History Screen**:
+   - Show a log of water intake entries over time.
+   - Display daily, weekly, or monthly water intake trends using graphs or charts.
+   - Allow users to view and edit past entries.
+
+4. **Reminders Screen**:
+   - Enable users to set reminders to drink water at regular intervals.
+   - Provide customization options for reminder frequency and timing.
+   - Allow users to snooze or dismiss reminders.
+
+5. **Settings Screen**:
+   - Allow users to customize their daily water intake goal.
+   - Provide options to set units of measurement (e.g., ounces, liters).
+   - Include theme customization and app preferences.
+
+6. **Achievements Screen**:
+   - Gamify the hydration tracking experience with achievements and milestones.
+   - Reward users for reaching hydration goals or maintaining consistency.
+   - Encourage healthy hydration habits through positive reinforcement.
+
+7. **Profile Screen**:
+   - Allow users to set up their profile with personal information like age, weight, and activity level.
+   - Provide insights or recommendations based on user data to optimize hydration goals.
+   - Enable users to sync data across devices or platforms.
+
+These views can help users track their water intake effectively, stay motivated to reach their hydration goals, and maintain a healthy lifestyle. Consider incorporating user feedback and usability testing to refine the views and enhance the overall user experience of your hydration tracker mobile app.
+
+## Sample of using sqlite3 with Beeware
+Yes, you can use SQLite with Beeware to create mobile apps that require local data storage on the device. SQLite is a popular choice for mobile app development due to its lightweight nature and compatibility with various platforms, including iOS and Android.
+
+To use SQLite with Beeware for a mobile app, you can follow these general steps:
+
+1. **Set up SQLite Database**:
+   - Create an SQLite database file (.db or .sqlite) to store your app's data locally on the mobile device.
+
+2. **Integrate SQLite in Beeware App**:
+   - Use the `sqlite3` module in Python to interact with the SQLite database.
+   - Connect to the SQLite database, execute SQL queries, and manage data storage and retrieval.
+
+3. **Design User Interface**:
+   - Create views and components using Toga to build the user interface for your mobile app.
+   - Design screens for data input, display, and interaction with the SQLite database.
+
+4. **Implement Business Logic**:
+   - Develop the logic to handle data operations, such as inserting, updating, deleting, and querying data in the SQLite database.
+   - Ensure proper error handling and data validation to maintain data integrity.
+
+5. **Testing and Deployment**:
+   - Test your mobile app on different devices and platforms to ensure compatibility and functionality.
+   - Package your Beeware app for distribution on mobile app stores or deployment on mobile devices.
+
+Here is a simple example of using SQLite in a Beeware mobile app:
+
+```python
+import sqlite3
+
+# Connect to SQLite database
+conn = sqlite3.connect('mydatabase.db')
+cursor = conn.cursor()
+
+# Create a table
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, email TEXT)''')
+
+# Insert data into the table
+cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", ('Alice', 'alice@example.com'))
+
+# Retrieve data from the table
+cursor.execute("SELECT * FROM users")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Commit changes and close connection
+conn.commit()
+conn.close()
+```
+
+By following these steps, you can effectively use SQLite with Beeware to develop mobile apps that leverage local data storage capabilities for efficient data management on mobile devices.
