@@ -212,3 +212,50 @@ conn.close()
 ```
 
 By following these steps, you can effectively use SQLite with Beeware to develop mobile apps that leverage local data storage capabilities for efficient data management on mobile devices.
+
+## Can I use Keras with TensorFlow Lite?
+
+**Yes, you can definitely leverage Keras models for deployment with TensorFlow Lite.** Here's a breakdown of the process:
+
+**1. Train Your Model in Keras:**
+   - Create your machine learning model using the familiar Keras API.
+   - Train it on your dataset to achieve the desired performance.
+
+**2. Save the Model (Optional but Recommended):**
+   - While TensorFlow Lite can convert directly from Keras models, saving it as a SavedModel format is generally recommended for better compatibility and flexibility:
+     ```python
+     import tensorflow as tf
+
+     model = your_keras_model  # Assuming you have your trained Keras model
+
+     # Save as SavedModel (recommended)
+     tf.saved_model.save(model, 'saved_model')
+     ```
+
+**3. Convert the Model to TensorFlow Lite:**
+   - Use the `tf.lite.TFLiteConverter` class to convert your Keras model or SavedModel into a TensorFlow Lite format suitable for deployment on mobile and embedded devices:
+     ```python
+     import tensorflow as tf
+
+     converter = tf.lite.TFLiteConverter.from_keras_model(model)  # Or from_saved_model('saved_model')
+
+     # (Optional) Apply optimizations like quantization for smaller model size and faster inference
+     converter.optimizations = [tf.lite.Optimize.DEFAULT]
+
+     tflite_model = converter.convert()
+
+     # Save the converted TensorFlow Lite model
+     with open('converted_model.tflite', 'wb') as f:
+         f.write(tflite_model)
+     ```
+
+**4. Load and Use the TensorFlow Lite Model in Your Application:**
+   - Integrate the converted TensorFlow Lite model (`converted_model.tflite`) into your mobile or embedded application using the appropriate TensorFlow Lite runtime for your target platform.
+   - Perform inference (make predictions) on new data using the loaded TensorFlow Lite model.
+
+**Key Points:**
+
+- TensorFlow Lite might not support all Keras operations directly. If you encounter conversion errors, you might need to modify your Keras model architecture or explore alternative implementations. Refer to the TensorFlow Lite compatibility guide for more details: [https://www.tensorflow.org/lite/guide/ops_compatibility](https://www.tensorflow.org/lite/guide/ops_compatibility)
+- Consider optimizations like quantization during conversion to reduce model size and improve inference speed on resource-constrained devices.
+
+By following these steps, you can effectively leverage the power of Keras for model development and seamlessly deploy your trained models for on-device inference using TensorFlow Lite.
